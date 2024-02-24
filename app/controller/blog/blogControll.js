@@ -17,7 +17,19 @@ router.get("/blog", asyncHandler(async (req, res, next) => {
 
         // const allBlog = await Blog.findAll()
         const data = [
-            { "blog 1": "lorem is the best title" }, { "blog 2": "lorem is the best title" }, { "blog 3": "lorem is the best title" }
+            {
+                "title": "blog 1",
+                "description ": "lorem is the best title"
+            }, 
+            {
+                "title": "blog 2",
+                "description ": "port http://localhost:3001."
+            }, 
+            {
+                "title": "blog 3",
+                "description ": "waiting for file changes before starting"
+            }
+            
         ]
         res.status(200).json(data);
     } catch (error) {
