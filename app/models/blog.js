@@ -1,7 +1,7 @@
 
 
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/sequelize');
+const sequelize = require('../config/dbConfig');
 
 const Blog = sequelize.define('blogs', {
   // Model attributes are defined here
