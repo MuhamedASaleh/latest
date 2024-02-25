@@ -3,36 +3,40 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/dbConfig');
 
-const Item = sequelize.define('items', {
-  // Model attributes are defined here
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+try {
+  
+  const Item = sequelize.define('items', {
+    // Model attributes are defined here
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
+    ,
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true ,
+      
+    }
   },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: true
-  },
-  description: {
-    type: DataTypes.STRING,
-    allowNull: true
-  }
-  ,
-  photo: {
-    type: DataTypes.STRING,
-    allowNull: true ,
-
-  }
-},
   {
-
-    timestamps: true, // Enable automatic management of createdAt and updatedAt
-    updatedAt: 'updatedAt',
-    createdAt: 'createdAt'
+    
+    timestamps: true
     
   }
-
-);
-
-module.exports = Item;
+  
+  );
+  
+  module.exports = Item;
+  
+} catch (error) {
+    console.error('error happen in creating item table', error)
+}
